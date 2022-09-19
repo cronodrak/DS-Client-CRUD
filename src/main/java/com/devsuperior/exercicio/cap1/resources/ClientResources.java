@@ -3,22 +3,28 @@ package com.devsuperior.exercicio.cap1.resources;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.exercicio.cap1.entities.Client;
+import com.devsuperior.exercicio.cap1.services.ClientService;
 
 @RestController
 @RequestMapping(value = "/clients")
 public class ClientResources {
+	
+	@Autowired
+	private ClientService service;
 
 	@GetMapping
 	public ResponseEntity<List<Client>> findAll() {
-		List<Client> list = new ArrayList<>();
-		list.add(new Client(1L, "Vitor Alves", "100.100.100.10", 2500.0, null, 1));
-		list.add(new Client(2L, "Ronaldo Alves", "100.100.100.10", 2500.0, null, 1));
+		List<Client> list = service.findAll();
+		
+		
+		
 		return ResponseEntity.ok().body(list);
 	}
 }
