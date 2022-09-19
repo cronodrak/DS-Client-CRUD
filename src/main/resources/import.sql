@@ -1,0 +1,3 @@
+insert into tb_client(name, cpf, income, birth_date, children) values ('Vitor Alves', '100.100.100.10', 2500.0, TIMESTAMP WITH TIME ZONE '1993-08-08T00:00:00.0Z', 1);
+insert into tb_client(name, cpf, income, birth_date, children) values ('Ronaldo Alves', '100.100.100.10', 2900.0, TIMESTAMP WITH TIME ZONE '1994-09-30T00:00:00.0Z', 0);
+insert into tb_client(name, cpf, income, birth_date, children) values ('Aquilles Alves', '100.100.100.10', 1500.0, TIMESTAMP WITH TIME ZONE '2019-06-19T00:00:00.0Z', 0);
